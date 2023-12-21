@@ -1,5 +1,8 @@
 .mainWrapper{
 display: none;
+video{
+  background-color: black;
+}
   @media screen and (max-width:500px) {
     display: flex;
     flex-direction: column;
