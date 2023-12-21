@@ -24,7 +24,7 @@ display: none;
       align-items: center;
       justify-content: flex-start;
       position: relative;
-      padding-bottom: 1em;
+      
     }
     .darkLogo{
       width: 20%;
@@ -133,6 +133,7 @@ display: none;
       flex-direction: row;
       align-items: center;
       width: 100%;
+      margin-bottom: 1em;
       .line{
         flex: 1px;
         height: 1px;
