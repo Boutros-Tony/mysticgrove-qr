@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --main-color:#F6AB6D;
+}
+
+@font-face {
+  font-family: "mohave-light";
+  src: url("/fonts/mohave-light-webfont.woff2") format("woff2"), url("/fonts/mohave-light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "mohave-regular";
+  src: url("/fonts/mohave-regular-webfont.woff2") format("woff2"), url("/fonts/mohave-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "mohave-medium";
+  src: url("/fonts/mohave-medium-webfont.woff2") format("woff2"), url("/fonts/mohave-medium-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "mohave-italic";
+  src: url("/fonts/mohave-italic-webfont.woff2") format("woff2"), url("/fonts/mohave-italic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "mohave-medium-italic";
+  src: url("/public/fonts/Mohave-MediumItalic.otf") format("otf");
+}
+@font-face {
+  font-family: "mohave-light-italic";
+  src: url("/fonts/mohave-lightitalic-webfont.woff") format("woff"), url("/fonts/mohave-lightitalic-webfont.woff2") format("woff2");
+  font-style: normal;
+}
+@font-face {
+  font-family: "mohave-bold-italic";
+  src: url("/fonts/Mohave-BoldItalic.otf") format("otf");
+}
+@font-face {
+  font-family: "mohave-bold";
+  src: url("/fonts/mohave-bold-webfont.woff") format("woff"), url("/fonts/Mohave-Bold.otf") format("otf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "bald-eagle";
+  src: url("/fonts/bald-eagle-webfont.woff2") format("woff2"), url("/fonts/bald-eagle-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  letter-spacing: 31px;
+}/*# sourceMappingURL=globals.css.map */

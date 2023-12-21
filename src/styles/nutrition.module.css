@@ -1,0 +1,179 @@
+.back {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.5;
+}
+
+.nutritionWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+@media screen and (max-width: 500px) {
+  .nutritionWrapper {
+    margin-top: 20px;
+  }
+}
+.nutritionWrapper h1 {
+  font-family: "bald-eagle";
+  font-size: 60px;
+  color: black;
+}
+@media screen and (max-width: 500px) {
+  .nutritionWrapper h1 {
+    font-size: 30px;
+  }
+}
+.nutritionWrapper .extrafont {
+  font-size: 26px;
+}
+@media screen and (max-width: 500px) {
+  .nutritionWrapper .extrafont {
+    font-size: 14px;
+  }
+}
+.nutritionWrapper .bold {
+  font-family: "mohave-regular" !important;
+  display: inline !important;
+}
+.nutritionWrapper .lessMargin {
+  margin-bottom: 0 !important;
+}
+.nutritionWrapper ol {
+  list-style-type: none;
+}
+.nutritionWrapper ol li {
+  font-size: 20px;
+  font-family: "mohave-regular";
+  text-decoration: underline;
+  margin-bottom: 20px;
+}
+.nutritionWrapper ul {
+  list-style-type: disc;
+  margin-left: 30px;
+  margin-bottom: 20px;
+}
+.nutritionWrapper ul li {
+  font-size: 18px;
+  font-family: "mohave-light";
+  margin-bottom: 0px;
+  text-decoration: none;
+}
+.nutritionWrapper .privacyList {
+  list-style-type: none;
+}
+.nutritionWrapper .privacyList li {
+  margin-bottom: 5px;
+}
+.nutritionWrapper .container {
+  margin-top: 80px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+@media screen and (max-width: 500px) {
+  .nutritionWrapper .container {
+    margin-top: 20px;
+  }
+}
+.nutritionWrapper .container table {
+  width: 100%;
+  margin: 40px 0;
+}
+@media screen and (max-width: 500px) {
+  .nutritionWrapper .container table {
+    width: 100%;
+  }
+}
+.nutritionWrapper .container table thead {
+  border: 2px solid black;
+}
+.nutritionWrapper .container table th {
+  padding: 10px;
+  font-size: 30px;
+  font-family: "mohave-regular";
+  font-weight: normal;
+  border: 2px solid black;
+}
+@media screen and (max-width: 500px) {
+  .nutritionWrapper .container table th {
+    font-size: 12px;
+  }
+}
+.nutritionWrapper .container table td {
+  padding: 10px;
+  font-size: 25px;
+  font-family: "mohave-regular";
+  font-weight: normal;
+  text-align: center;
+  border: 2px solid black;
+  border-spacing: 0px;
+}
+@media screen and (max-width: 500px) {
+  .nutritionWrapper .container table td {
+    font-size: 9px;
+  }
+}
+.nutritionWrapper .container table tr {
+  border: 2px solid black;
+  margin-bottom: 2px;
+}
+.nutritionWrapper .container table tr td:first-child {
+  font-size: 30px;
+}
+@media screen and (max-width: 500px) {
+  .nutritionWrapper .container table tr td:first-child {
+    font-size: 15px;
+  }
+}
+.nutritionWrapper .container h3 {
+  font-family: "mohave-regular";
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+.nutritionWrapper .container h2 {
+  font-family: "mohave-regular";
+  font-weight: normal;
+  text-decoration: underline;
+  margin-bottom: 5px;
+  margin-top: 30px;
+}
+.nutritionWrapper .container p {
+  font-size: 18px;
+  font-family: "mohave-light";
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 500px) {
+  .nutritionWrapper .container p {
+    font-size: 16px;
+  }
+}
+.nutritionWrapper .container p svg {
+  margin-right: 10px;
+}
+.nutritionWrapper .container p.withBorder {
+  border: 2px solid black;
+  padding: 5px;
+  width: 35%;
+  margin-bottom: 2px;
+}
+@media screen and (max-width: 500px) {
+  .nutritionWrapper .container p.withBorder {
+    width: 100%;
+  }
+}
+
+.tableSpan {
+  font-family: "mohave-medium";
+  white-space: nowrap;
+  font-style: italic;
+}/*# sourceMappingURL=nutrition.module.css.map */

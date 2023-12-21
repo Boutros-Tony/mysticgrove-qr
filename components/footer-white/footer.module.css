@@ -1,0 +1,276 @@
+.footerHolder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 30px 0;
+  z-index: 1;
+  border-top: 2px solid black;
+}
+.footerHolder a:visited {
+  color: inherit;
+}
+.footerHolder.bgTransparent {
+  background-color: transparent;
+}
+.footerHolder .footerBanner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  inset: 0;
+}
+.footerHolder p {
+  font-family: "mohave-light";
+  text-transform: uppercase;
+  text-align: center;
+  color: black;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 500px) {
+  .footerHolder p {
+    font-size: clamp(10px, 3.4vw, 26px);
+  }
+}
+.footerHolder p.fontBlue {
+  color: black;
+}
+.footerHolder form {
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+  min-width: 50%;
+}
+.footerHolder form button {
+  display: none;
+}
+@media screen and (max-width: 500px) {
+  .footerHolder form {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    width: 90%;
+  }
+}
+.footerHolder form textarea {
+  padding-left: 10px;
+  flex: 1;
+  text-transform: uppercase;
+  font-family: "mohave-regular";
+  font-size: 20px;
+}
+@media screen and (max-width: 500px) {
+  .footerHolder form textarea {
+    height: 70px;
+    width: 80%;
+    border-radius: 0;
+  }
+}
+.footerHolder form textarea::-moz-placeholder {
+  color: black;
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-family: "mohave-regular";
+  font-size: 20px;
+}
+.footerHolder form textarea::placeholder {
+  color: black;
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-family: "mohave-regular";
+  font-size: 20px;
+}
+@media screen and (max-width: 500px) {
+  .footerHolder form textarea::-moz-placeholder {
+    font-size: 14px;
+  }
+  .footerHolder form textarea::placeholder {
+    font-size: 14px;
+  }
+}
+.footerHolder form div {
+  display: flex;
+  flex-direction: column;
+  margin-right: 8px;
+  justify-content: space-between;
+}
+@media screen and (max-width: 500px) {
+  .footerHolder form div {
+    margin-right: 0px;
+    align-items: center;
+    width: 100%;
+  }
+}
+.footerHolder form div input {
+  height: 45%;
+  text-transform: uppercase;
+  font-family: "mohave-regular";
+  font-size: 20px;
+  border: 1px solid black;
+  padding-left: 10px;
+}
+@media screen and (max-width: 500px) {
+  .footerHolder form div input {
+    margin-bottom: 20px;
+    height: 30px;
+    width: 60%;
+    border-radius: 0;
+    font-size: 14px;
+  }
+}
+.footerHolder form div input::-moz-placeholder {
+  color: black;
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-family: "mohave-regular";
+  font-size: 20px;
+}
+.footerHolder form div input::placeholder {
+  color: black;
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-family: "mohave-regular";
+  font-size: 20px;
+}
+@media screen and (max-width: 500px) {
+  .footerHolder form div input::-moz-placeholder {
+    font-size: 14px;
+  }
+  .footerHolder form div input::placeholder {
+    font-size: 14px;
+  }
+}
+.footerHolder .footerRowOne {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin: 20px 0;
+  justify-content: space-between;
+  color: black;
+}
+.footerHolder .footerRowOne .socialMedia {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 20px;
+}
+.footerHolder .footerRowOne .socialMedia .iconsHolder {
+  display: flex;
+  flex-direction: row;
+}
+@media screen and (max-width: 500px) {
+  .footerHolder .footerRowOne .socialMedia {
+    margin-bottom: 20px;
+    flex-direction: column;
+  }
+}
+.footerHolder .footerRowOne .socialMedia svg {
+  width: 5vw;
+  height: 5vw;
+  max-width: 45px;
+  max-height: 45px;
+  margin-right: 10px;
+}
+@media screen and (max-width: 500px) {
+  .footerHolder .footerRowOne .socialMedia svg {
+    width: 15px;
+    height: 15px;
+  }
+}
+.footerHolder .footerRowOne .socialMedia svg path {
+  fill: black;
+}
+.footerHolder .footerRowOne .socialMedia svg path.blue {
+  fill: #B2BEE6 !important;
+}
+.footerHolder .footerRowOne .socialMedia h1 {
+  font-size: clamp(10px, 2vw, 50px);
+  font-family: "bald-eagle";
+  color: black;
+}
+.footerHolder .footerRowOne h3 {
+  font-family: "mohave-regular";
+  font-weight: normal;
+  text-transform: uppercase;
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: clamp(14px, 1.2vw, 30px);
+  text-align: center;
+}
+.footerHolder .footerRowOne h3 img {
+  width: 10vw;
+}
+@media screen and (max-width: 500px) {
+  .footerHolder .footerRowOne h3 {
+    font-size: 2vw;
+    margin: 0 10px;
+    margin-bottom: 20px;
+    width: 33.3333333333%;
+  }
+  .footerHolder .footerRowOne h3 img {
+    width: 100%;
+  }
+}
+.footerHolder .footerRowTwo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media screen and (max-width: 500px) {
+  .footerHolder .footerRowTwo {
+    width: 100%;
+  }
+}
+.footerHolder .footerRowTwo .ageLinksHolder {
+  margin-bottom: 20px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  display: flex;
+}
+.footerHolder .footerRowTwo .ageLinksHolder a {
+  color: black;
+  font-family: "mohave-regular";
+  text-transform: uppercase;
+  padding: 0 20px;
+  border-right: 2px solid black;
+}
+@media screen and (max-width: 500px) {
+  .footerHolder .footerRowTwo .ageLinksHolder a {
+    padding: 0 4vw;
+    margin-bottom: 10px;
+  }
+  .footerHolder .footerRowTwo .ageLinksHolder a:nth-child(1) {
+    order: 4;
+    border-right: none;
+  }
+}
+.footerHolder .footerRowTwo .ageLinksHolder a:last-child {
+  border-right: none;
+}
+.footerHolder .footerRowTwo p {
+  color: black;
+  text-transform: uppercase;
+  font-size: clamp(10px, 0.9vw, 26px);
+}
+.footerHolder .footerRowTwo p.fontBlue {
+  color: #B2BEE6;
+}
+@media screen and (max-width: 500px) {
+  .footerHolder .footerRowTwo p {
+    max-width: 90%;
+  }
+}
+.footerHolder .footerRowTwo p a {
+  text-transform: lowercase;
+  text-decoration: underline;
+  font-family: "mohave-bold";
+}
+
+.fontBlue {
+  color: #B2BEE6;
+}/*# sourceMappingURL=footer.module.css.map */
