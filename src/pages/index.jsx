@@ -328,7 +328,7 @@ way people perceive their relationship with gin.
       <img className={styles.miniLogo} src="/assets/mini-logo-2.png" alt="" srcset="" />
         </div>
       </div>
- 
+    
   
       {/* <div className={styles.charactersWrapper}>
         <img className={styles.charOne} src="/assets/charachters-1.jpg" />
