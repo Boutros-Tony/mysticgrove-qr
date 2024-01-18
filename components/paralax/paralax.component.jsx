@@ -7,15 +7,26 @@ const HorizontalScroll = () => {
   const imageRef = useRef(null);
   const stickyRef = useRef(null); // Ref for the sticky div
   const { scrollY } = useViewportScroll();
-
   useEffect(() => {
-    if (imageRef.current) {
-      const viewportWidth = window.innerWidth;
-      const renderedImageWidth = imageRef.current.clientWidth;
-      const scrollableWidth = renderedImageWidth > viewportWidth ? renderedImageWidth - viewportWidth : 0;
-      setExtraHeight(scrollableWidth);
-    }
-  }, [imageRef.current]);
+    const handleResize = () => {
+      if (imageRef.current) {
+        const viewportWidth = window.innerWidth;
+        const renderedImageWidth = imageRef.current.clientWidth;
+        const scrollableWidth = renderedImageWidth > viewportWidth ? renderedImageWidth - viewportWidth : 0;
+        setExtraHeight(scrollableWidth);
+      }
+    };
+  
+    window.addEventListener('load', handleResize); // Ensure this runs after everything has loaded
+    window.addEventListener('resize', handleResize); // Adjust for window resize
+    handleResize(); // Initial call
+  
+    return () => {
+      window.removeEventListener('load', handleResize);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  
 
   useEffect(() => {
     const updateBorderWidth = () => {
