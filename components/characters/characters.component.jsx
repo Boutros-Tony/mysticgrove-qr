@@ -24,7 +24,7 @@ const Characters = () => {
         pagination={{
           clickable: true,
         }}
-        modules={[Mousewheel, Pagination,EffectFade]}
+        modules={[Mousewheel,EffectFade]}
         className="mySwiper"
       >
         <SwiperSlide>

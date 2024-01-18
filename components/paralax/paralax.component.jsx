@@ -25,9 +25,9 @@ const HorizontalScroll = () => {
       const startDecreasePoint = stickyTop - viewportHeight; // Start decreasing when div scrolls into view
       const distanceToTop = Math.max(stickyTop - currentScrollY, 0);
 
-      let newBorderWidth = 25;
+      let newBorderWidth = 55;
       if (currentScrollY > startDecreasePoint) {
-        newBorderWidth = 25 * (distanceToTop / viewportHeight);
+        newBorderWidth = 55 * (distanceToTop / viewportHeight);
       }
       setBorderWidth(Math.max(newBorderWidth, 0));
     };
