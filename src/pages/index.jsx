@@ -5,6 +5,9 @@ import styles from '@/styles/Home.module.scss'
 import Link from 'next/link'
 import Footer from 'components/footer/footer.component'
 import {motion} from 'framer-motion'
+import VideoComponent from 'components/video-component/video-component'
+import HorizontalScroll from 'components/paralax/paralax.component'
+import Characters from 'components/characters/characters.component'
 export default function Home() {
   const Key = () => {
     return (
@@ -73,14 +76,15 @@ const variantsBooks = {
         <link rel="icon" href="/assets/favicon.png" />
       </Head>
       <div className={styles.mainWrapper}>
-       
+    
         <div className={styles.verticalCenterWrapper}>
         <img className={styles.mainBgImg} src="/assets/background.jpg" alt="" />
         <img className={styles.darkLogo} src="/assets/dark-logo.png" />
         <div className={styles.textKeysHolder}>
         <Key/>
         <div className={styles.verticalCenterWrapper}>
-          <h1>The Mystic Grove</h1>
+          
+          <img className={styles.titleImage} src="/assets/title.png" />
           <div className={styles.separator}></div>
           <h3>join the mystery and become part of <br /> the grove's community</h3>
         </div>
@@ -92,7 +96,7 @@ const variantsBooks = {
           <motion.div initial="hidden"
                 whileInView="visible"
                 viewport={{ once: false }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 1 ,delay:1}}
                 variants={variants}>
                     <Link target="_blank" className={styles.tunnel} href="https://www.instagram.com/mysticgrovegin/">
           <img src="/assets/tunnel-of-love.jpg"  />
@@ -108,7 +112,7 @@ by visiting our instagram</p>
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1 ,delay:1}}
           variants={variantsright}
           >
           <Link  target="_blank" className={styles.imagine} href="https://themysticgrove.com/">
@@ -142,6 +146,7 @@ our website </p>
             <div className={styles.line}></div>
         </div>
         </div>
+
       <div className={styles.sectionTwo}>
         <div className={styles.lfBorder}></div>
         <div className={styles.lfBorder2}></div>
@@ -164,28 +169,28 @@ a genuine gin journey like no other. <br />
  initial="hidden"
  whileInView="visible"
  viewport={{ once: false }}
- transition={{ duration: 0.8 }}
+ transition={{ duration: 1 }}
  variants={variantsbottom}
 >
 <img className={styles.visualOne} src="/assets/visual1.jpg" />
 </motion.div>
+
 <motion.div
    initial="hidden"
    whileInView="visible"
    viewport={{ once: false }}
-   transition={{ duration: 0.8 }}
+   transition={{ duration: 1 }}
    variants={variantsVideo}
 >
-<video controls className={styles.videoOne} >
-        <source src="/assets/video1.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+
+      <VideoComponent src="/assets/video1.mp4" />
+
 </motion.div>
     <motion.div
        initial="hidden"
        whileInView="visible"
        viewport={{ once: false }}
-       transition={{ duration: 0.8 }}
+       transition={{ duration: 1 }}
        variants={variantsTextVideo}
     >
         <p className={styles.goldText}>
@@ -216,7 +221,7 @@ way people perceive their relationship with gin.
       <motion.div   initial="hidden"
        whileInView="visible"
        viewport={{ once: false }}
-       transition={{ duration: 0.8 }}
+       transition={{ duration: 1 }}
        variants={variantsLogo}>
       <img className={styles.libraryLogo} src="/assets/library-logo.png"  />
       </motion.div>
@@ -225,7 +230,7 @@ way people perceive their relationship with gin.
       <motion.div initial="hidden"
        whileInView="visible"
        viewport={{ once: false }}
-       transition={{ duration: 0.8 }}
+       transition={{ duration: 1 }}
        variants={variantsBooks}>
           <div className={styles.booksHolder}>
           <img src="/assets/book1.png" />
@@ -236,7 +241,8 @@ way people perceive their relationship with gin.
       
       <div className={styles.libraryTitle}>
         <Key/>
-        <h1>The mystic grove's</h1>
+        
+        <img className={styles.titleImagee} src="/assets/title-2.png"/>
         <Key/>
       </div>
       </div>
@@ -245,6 +251,7 @@ way people perceive their relationship with gin.
      
         </div>
       </div>
+      <HorizontalScroll/>
       <div className={styles.sectionThree}>
         <div className={styles.verticalCenterWrapperThree}>
           <img className={styles.bgSecThree} src="/assets/visual2.jpg" alt="" srcset="" />
@@ -254,17 +261,18 @@ way people perceive their relationship with gin.
           <motion.div  initial="hidden"
    whileInView="visible"
    viewport={{ once: false }}
-   transition={{ duration: 0.8 }}
+   transition={{ duration: 1 }}
    variants={variantsVideo}>
-          <video controls className={styles.videoOne} >
+    <VideoComponent src="/assets/video2.mp4"/>
+          {/* <video controls className={styles.videoOne} >
         <source src="/assets/video2.mp4" type="video/mp4" />
         Your browser does not support the video tag.
-      </video>
+      </video> */}
           </motion.div>
         <motion.div initial="hidden"
        whileInView="visible"
        viewport={{ once: false }}
-       transition={{ duration: 0.8 }}
+       transition={{ duration: 1 }}
        variants={variantsTextVideo}>
         <p className={styles.darkText}>Flourish. Just like a waterfall would. For the flow <br /> cannot stay silent, just like wisdom won't. The truth <br /> is, when they speak, the voice of power speaks.</p>
           </motion.div> 
@@ -274,14 +282,14 @@ way people perceive their relationship with gin.
         <motion.div  initial="hidden"
        whileInView="visible"
        viewport={{ once: false }}
-       transition={{ duration: 0.8 }}
+       transition={{ duration: 1 }}
        variants={variantsGlass}>
            <img className={styles.glass} src="/assets/glass1.png" alt="" srcset="" />
         </motion.div>
         <motion.div  initial="hidden"
        whileInView="visible"
        viewport={{ once: false }}
-       transition={{ duration: 0.8 }}
+       transition={{ duration: 1 }}
        variants={variantsGlass2}>
              <img className={styles.glass2} src="/assets/glass2.png" alt="" srcset="" />
         </motion.div>
@@ -289,36 +297,40 @@ way people perceive their relationship with gin.
         <motion.div  initial="hidden"
        whileInView="visible"
        viewport={{ once: false }}
-       transition={{ duration: 0.8 }}
+       transition={{ duration: 1 }}
        variants={variantsGlass}>
              <img className={styles.glass} src="/assets/glass3.png" alt="" srcset="" />
         </motion.div>
         <motion.div  initial="hidden"
        whileInView="visible"
        viewport={{ once: false }}
-       transition={{ duration: 0.8 }}
+       transition={{ duration: 1 }}
        variants={variantsGlass2}>
            <img className={styles.glass2} src="/assets/glass4.png" alt="" srcset="" />
         </motion.div>
         
         </div>
+    
         <div className={styles.verticalCenterWrapperThree}>
           <motion.div initial="hidden"
        whileInView="visible"
        viewport={{ once: false }}
-       transition={{ duration: 0.8 }}
+       transition={{ duration: 1 }}
        variants={variantsVideoTwo}>
-          <video controls  className={styles.videoThird} >
+        <VideoComponent src="/assets/video3.mp4" />
+          {/* <video controls  className={styles.videoThird} >
         <source src="/assets/video3.mp4" type="video/mp4" />
         Your browser does not support the video tag.
-      </video>
+      </video> */}
           </motion.div>
      
       <p className={styles.darkText}>On the road to paradise, some seekers might come across a cornucopia that is rich and abundant in gold. At certain times, more than once. And with just enough foresight, a number of those seekers will find more of it, not only for the substance itself, but for the freedom, well-being and satisfaction it bequeaths.</p>
       <img className={styles.miniLogo} src="/assets/mini-logo-2.png" alt="" srcset="" />
         </div>
       </div>
-      <div className={styles.charactersWrapper}>
+ 
+  
+      {/* <div className={styles.charactersWrapper}>
         <img className={styles.charOne} src="/assets/charachters-1.jpg" />
         <h1 className={styles.charTitle}>A multi- <br />
 dimensional <br />
@@ -340,7 +352,8 @@ connoisseurs would expect.
         <img className={styles.charTwo} src="/assets/charachters-2.jpg" />
         </motion.div>
         
-      </div>
+      </div> */}
+      <Characters/>
       <Footer/>
       </div>
     </>

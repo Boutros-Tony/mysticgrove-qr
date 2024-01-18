@@ -1,7 +1,12 @@
 .mainWrapper{
 display: none;
-video{
-  background-color: black;
+
+.titleImage{
+  max-width: 87%;
+}
+.titleImagee{
+  max-width: 78%;
+  margin: 0 1em;
 }
   @media screen and (max-width:500px) {
     display: flex;
@@ -9,7 +14,7 @@ video{
     position: relative;
     width: 100vw;
     max-width: 100vw;
-    overflow: hidden;
+ 
     .mainBgImg{
       width: 100%;
       height: 100%;
@@ -27,7 +32,7 @@ video{
       align-items: center;
       justify-content: flex-start;
       position: relative;
-      
+      overflow: hidden;
     }
     .darkLogo{
       width: 20%;
@@ -71,6 +76,7 @@ video{
       }
       svg{
         width: 15px;
+        flex: none;
       }
     
     }
@@ -201,6 +207,7 @@ video{
   @media screen and (max-width:500px) {
     .sectionTwo{
       position: relative;
+      overflow: hidden;
       .lfBorder{
         width: 1px;
         position: absolute;
@@ -269,6 +276,7 @@ z-index: 1;
         svg{
           width: 1em;
           height:2em;
+          flex:none;
           path{
             fill: #242221 !important;
           
@@ -359,6 +367,7 @@ z-index: 1;
             padding: 1em;
             border-top: 1px solid var(--main-color);
             svg{
+              flex:none;
               path{
                 fill: var(--main-color) !important;
               }
@@ -423,6 +432,7 @@ z-index: 1;
   @media screen and (max-width:500px) {
     .sectionThree{
       width: 100vw;
+      overflow: hidden;
       background-color: #AE906A;
       display: flex;
       align-items: center;

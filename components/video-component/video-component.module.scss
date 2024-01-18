@@ -1,0 +1,20 @@
+.videoHolder{
+    width: 100%;
+    position: relative;
+    margin: 1em 0;
+    video{
+        width: 100%;
+    }
+    button{
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        z-index: 2;
+        background-color: transparent;
+        border: none;
+        img{
+            width: 25px;
+            height: 25px;
+        }
+    }
+}
