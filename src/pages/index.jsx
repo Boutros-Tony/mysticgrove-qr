@@ -1,5 +1,5 @@
 import Head from 'next/head'
-
+import { useState } from 'react'
 
 import styles from '@/styles/Home.module.scss'
 import Link from 'next/link'
@@ -9,6 +9,12 @@ import VideoComponent from 'components/video-component/video-component'
 import HorizontalScroll from 'components/paralax/paralax.component'
 import Characters from 'components/characters/characters.component'
 export default function Home() {
+  const [isMuted, setIsMuted] = useState(true);
+  // Function to toggle mute status
+  const toggleMute = () => {
+    setIsMuted(!isMuted);
+  };
+
   const Key = () => {
     return (
         <>
@@ -78,6 +84,11 @@ const variantsBooks = {
       <div className={styles.mainWrapper}>
     
         <div className={styles.verticalCenterWrapper}>
+        <video className={styles.mainVideo} playsInline autoPlay  loop muted={isMuted}>
+        <source src='/assets/animations-sequence.mp4' type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <button className={styles.muteButton} onClick={toggleMute}>{isMuted ? <img src='/assets/unmute.png'/> : <img src='/assets/mute.png'/>}</button>
         <img className={styles.mainBgImg} src="/assets/background.jpg" alt="" />
         <img className={styles.darkLogo} src="/assets/dark-logo.png" />
         <div className={styles.textKeysHolder}>
@@ -102,9 +113,12 @@ const variantsBooks = {
           <img src="/assets/tunnel-of-love.jpg"  />
           <img src="/assets/instagram.png" className={styles.centerIcon}  />
           <div className={styles.linksBox}>
+            <div className={styles.linksBoxBg}>
             <p>Learn more about our story <br />
 by visiting our instagram</p>
 <span>@mysticgrovegin</span>
+            </div>
+        
           </div>
           </Link>
           </motion.div>
@@ -119,9 +133,12 @@ by visiting our instagram</p>
           <img src="/assets/imagine.jpg"  />
           <img src="/assets/website.png" className={styles.centerIcon}  />
           <div className={styles.linksBox}>
+            <div className={styles.linksBoxBg}>
             <p>Take a glance at  <br />
 our website </p>
 <span>www.themysticgrove.com</span>
+            </div>
+         
           </div>
           </Link>
           </motion.div>
@@ -251,7 +268,7 @@ way people perceive their relationship with gin.
      
         </div>
       </div>
-      <HorizontalScroll/>
+    
       <div className={styles.sectionThree}>
         <div className={styles.verticalCenterWrapperThree}>
           <img className={styles.bgSecThree} src="/assets/visual2.jpg" alt="" srcset="" />
@@ -274,7 +291,7 @@ way people perceive their relationship with gin.
        viewport={{ once: false }}
        transition={{ duration: 1 }}
        variants={variantsTextVideo}>
-        <p className={styles.darkText}>Flourish. Just like a waterfall would. For the flow <br /> cannot stay silent, just like wisdom won't. The truth <br /> is, when they speak, the voice of power speaks.</p>
+        <p style={{fontFamily:"mohave-regular"}} className={styles.darkText}>Flourish. Just like a waterfall would. For the flow <br /> cannot stay silent, just like wisdom won't. The truth <br /> is, when they speak, the voice of power speaks.</p>
           </motion.div> 
        
         <img className={styles.miniLogo} src="/assets/mini-logo-2.png" alt="" srcset="" />
@@ -310,7 +327,7 @@ way people perceive their relationship with gin.
         </motion.div>
         
         </div>
-    
+        <HorizontalScroll/>
         <div className={styles.verticalCenterWrapperThree}>
           <motion.div initial="hidden"
        whileInView="visible"
@@ -328,7 +345,7 @@ way people perceive their relationship with gin.
       <img className={styles.miniLogo} src="/assets/mini-logo-2.png" alt="" srcset="" />
         </div>
       </div>
-    
+     
   
       {/* <div className={styles.charactersWrapper}>
         <img className={styles.charOne} src="/assets/charachters-1.jpg" />

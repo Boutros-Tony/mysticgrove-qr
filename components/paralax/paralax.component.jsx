@@ -33,23 +33,34 @@ const HorizontalScroll = () => {
       const viewportHeight = window.innerHeight;
       const currentScrollY = window.scrollY;
       const stickyTop = stickyRef.current ? stickyRef.current.offsetTop : 0;
-      const startDecreasePoint = stickyTop - viewportHeight; // Start decreasing when div scrolls into view
-      const distanceToTop = Math.max(stickyTop - currentScrollY, 0);
-
-      let newBorderWidth = 55;
+  
+      // Calculate the start point for decreasing based on the desired viewport percentage
+      const decreaseStartPercentage = 0.5; // Start at 30% of the viewport, change to 0.5 for 50%
+      const startDecreasePoint = stickyTop - (viewportHeight * (1 - decreaseStartPercentage));
+  
+      // Calculate the end point where the border should be fully minimized
+      const endDecreasePoint = stickyTop;
+  
+      // Ensure the decrease starts smoothly from the calculated point
       if (currentScrollY > startDecreasePoint) {
-        newBorderWidth = 55 * (distanceToTop / viewportHeight);
+        // Map the scroll range to border width range
+        const progress = Math.min((currentScrollY - startDecreasePoint) / (endDecreasePoint - startDecreasePoint), 1);
+        // Smooth transition with linear interpolation
+        const newBorderWidth = 55 * (1 - progress); // Linearly interpolate border width
+  
+        setBorderWidth(Math.max(newBorderWidth, 0)); // Ensure border width doesn't go negative
       }
-      setBorderWidth(Math.max(newBorderWidth, 0));
     };
-
+  
     window.addEventListener('scroll', updateBorderWidth);
     updateBorderWidth(); // Initial call
-
+  
     return () => {
       window.removeEventListener('scroll', updateBorderWidth);
     };
   }, []);
+  
+  
 
   const stickyStart = stickyRef.current ? stickyRef.current.offsetTop - 5 : 0; // 5px before sticky
   const x = useTransform(scrollY, [stickyStart, stickyStart + extraHeight], ['0px', `-${extraHeight}px`]);
@@ -70,7 +81,7 @@ const HorizontalScroll = () => {
       >
         <motion.img
           ref={imageRef}
-          src="/assets/web-banner.jpg"
+          src="/assets/web-banner1.jpg"
           alt="Large Image"
           style={{
             width: 'auto',
