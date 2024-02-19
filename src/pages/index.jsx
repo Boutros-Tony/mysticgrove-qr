@@ -200,7 +200,7 @@ a genuine gin journey like no other. <br />
    variants={variantsVideo}
 >
 
-      <VideoComponent src="/assets/video1.mp4" />
+      <VideoComponent videoId="C5q5Qv8VQrk" src="/assets/video1.mp4" />
 
 </motion.div>
     <motion.div
@@ -280,7 +280,7 @@ way people perceive their relationship with gin.
    viewport={{ once: false }}
    transition={{ duration: 1 }}
    variants={variantsVideo}>
-    <VideoComponent src="/assets/video2.mp4"/>
+    <VideoComponent videoId="B2posgxHA_c" src="/assets/video2.mp4"/>
           {/* <video controls className={styles.videoOne} >
         <source src="/assets/video2.mp4" type="video/mp4" />
         Your browser does not support the video tag.
@@ -334,7 +334,7 @@ way people perceive their relationship with gin.
        viewport={{ once: false }}
        transition={{ duration: 1 }}
        variants={variantsVideoTwo}>
-        <VideoComponent src="/assets/video3.mp4" />
+        <VideoComponent width="60%" videoId="7CVOwmZ80zA" src="/assets/video3.mp4" />
           {/* <video controls  className={styles.videoThird} >
         <source src="/assets/video3.mp4" type="video/mp4" />
         Your browser does not support the video tag.

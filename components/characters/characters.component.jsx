@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import styles from './characters.module.scss';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -14,7 +14,7 @@ import { Mousewheel, Pagination ,EffectFade,} from 'swiper/modules';
 const Characters = () => {
     
   return (
-    <>
+    <div className={styles.charWrapper}>
       <Swiper
         direction={'vertical'}
         slidesPerView={1}
@@ -29,7 +29,7 @@ const Characters = () => {
         pagination={{
           clickable: true,
         }}
-        modules={[Mousewheel,EffectFade]}
+        modules={[Mousewheel,EffectFade,Pagination]}
         className="mySwiper"
       >
         <SwiperSlide>
@@ -41,7 +41,7 @@ const Characters = () => {
         <SwiperSlide> <img src='/assets/4.jpg'/></SwiperSlide>
         <SwiperSlide> <img src='/assets/5.jpg'/></SwiperSlide>
       </Swiper>
-    </>
+    </div>
   );
 }
 
