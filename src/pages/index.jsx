@@ -250,9 +250,17 @@ way people perceive their relationship with gin.
        transition={{ duration: 1 }}
        variants={variantsBooks}>
           <div className={styles.booksHolder}>
-          <img src="/assets/book-chapter-9.png" />
-          <img src="/assets/book-chapter-12.png"  />
-          <img src="/assets/book-chapter-8.png"  />
+            <a href="https://themysticgrove.com/our-creations/chapter-9/" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/book-chapter-9.png" />
+            </a>
+            <a href="https://themysticgrove.com/our-creations/chapter-12/" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/book-chapter-12.png"  />
+            </a>
+            <a href="https://themysticgrove.com/our-creations/chapter-8/" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/book-chapter-8.png"  />
+            </a>
+        
+  
         </div>
       </motion.div>
       
