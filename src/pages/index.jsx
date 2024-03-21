@@ -250,9 +250,9 @@ way people perceive their relationship with gin.
        transition={{ duration: 1 }}
        variants={variantsBooks}>
           <div className={styles.booksHolder}>
-          <img src="/assets/book1.png" />
-          <img src="/assets/book2.png"  />
-          <img src="/assets/book3.png"  />
+          <img src="/assets/book-chapter-9.png" />
+          <img src="/assets/book-chapter-12.png"  />
+          <img src="/assets/book-chapter-8.png"  />
         </div>
       </motion.div>
       
