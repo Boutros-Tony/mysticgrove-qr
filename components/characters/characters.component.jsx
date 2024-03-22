@@ -10,7 +10,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 
 // import required modules
-import { Mousewheel, Pagination ,EffectFade,} from 'swiper/modules';
+import { Mousewheel, Pagination ,EffectFade, Autoplay,} from 'swiper/modules';
 
 const Characters = () => {
     
@@ -19,6 +19,10 @@ const Characters = () => {
       <Swiper
         direction={'vertical'}
       speed={1500}
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
         effect="gl"
         onBeforeInit={(swiper) => (swiper.params.gl.shader = 'squares')}
         spaceBetween={0}
@@ -31,7 +35,7 @@ const Characters = () => {
         pagination={{
           clickable: true,
         }}
-        modules={[Mousewheel,EffectFade,Pagination,SwiperGL]}
+        modules={[Mousewheel,EffectFade,Pagination,SwiperGL,Autoplay]}
         className="mySwiper"
       >
         <SwiperSlide>
