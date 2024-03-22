@@ -1,12 +1,13 @@
 import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
+
+import SwiperGL from 'dist/swiper-gl.esm.js';
 import styles from './characters.module.scss';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
-
 
 // import required modules
 import { Mousewheel, Pagination ,EffectFade,} from 'swiper/modules';
@@ -17,8 +18,9 @@ const Characters = () => {
     <div className={styles.charWrapper}>
       <Swiper
         direction={'vertical'}
-        slidesPerView={1}
-        effect={'fade'}
+     
+        effect="gl"
+        onBeforeInit={(swiper) => (swiper.params.gl.shader = 'morph-y')}
         spaceBetween={0}
         touchReleaseOnEdges={true}
         mousewheel={{
@@ -29,18 +31,26 @@ const Characters = () => {
         pagination={{
           clickable: true,
         }}
-        modules={[Mousewheel,EffectFade,Pagination]}
+        modules={[Mousewheel,EffectFade,Pagination,SwiperGL]}
         className="mySwiper"
       >
         <SwiperSlide>
             <img src='/assets/0.jpg'/>
         </SwiperSlide>
-        <SwiperSlide> <img src='/assets/1.jpg'/></SwiperSlide>
-        <SwiperSlide> <img src='/assets/2.jpg'/></SwiperSlide>
-        <SwiperSlide> <img src='/assets/3.jpg'/></SwiperSlide>
-        <SwiperSlide> <img src='/assets/4.jpg'/></SwiperSlide>
-        <SwiperSlide> <img src='/assets/5.jpg'/></SwiperSlide>
+        <SwiperSlide> <img class="swiper-gl-image" src='/assets/1.jpg'/></SwiperSlide>
+        <SwiperSlide> <img class="swiper-gl-image" src='/assets/2.jpg'/></SwiperSlide>
+        <SwiperSlide> <img class="swiper-gl-image" src='/assets/3.jpg'/></SwiperSlide>
+        <SwiperSlide> <img class="swiper-gl-image" src='/assets/4.jpg'/></SwiperSlide>
+        <SwiperSlide> <img class="swiper-gl-image" src='/assets/5.jpg'/></SwiperSlide>
       </Swiper>
+      {/* <Swiper
+  modules={[SwiperGL]}
+  effect="gl"
+  onBeforeInit={(swiper) => (swiper.params.gl.shader = 'morph-x')}
+>
+<SwiperSlide> <img class="swiper-gl-image" src='/assets/4.jpg'/></SwiperSlide>
+        <SwiperSlide> <img class="swiper-gl-image" src='/assets/5.jpg'/></SwiperSlide>
+</Swiper> */}
     </div>
   );
 }
