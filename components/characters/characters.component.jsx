@@ -18,9 +18,9 @@ const Characters = () => {
     <div className={styles.charWrapper}>
       <Swiper
         direction={'vertical'}
-     
+      speed={1500}
         effect="gl"
-        onBeforeInit={(swiper) => (swiper.params.gl.shader = 'morph-y')}
+        onBeforeInit={(swiper) => (swiper.params.gl.shader = 'squares')}
         spaceBetween={0}
         touchReleaseOnEdges={true}
         mousewheel={{
@@ -35,7 +35,7 @@ const Characters = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-            <img src='/assets/0.jpg'/>
+            <img class="swiper-gl-image"  src='/assets/0.jpg'/>
         </SwiperSlide>
         <SwiperSlide> <img class="swiper-gl-image" src='/assets/1.jpg'/></SwiperSlide>
         <SwiperSlide> <img class="swiper-gl-image" src='/assets/2.jpg'/></SwiperSlide>
