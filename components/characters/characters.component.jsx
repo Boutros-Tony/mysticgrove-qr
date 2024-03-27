@@ -24,7 +24,7 @@ const Characters = () => {
         disableOnInteraction: false,
       }}
         effect="gl"
-        onBeforeInit={(swiper) => (swiper.params.gl.shader = 'squares')}
+        onBeforeInit={(swiper) => (swiper.params.gl.shader = 'peel-y')}
         spaceBetween={0}
         touchReleaseOnEdges={true}
         mousewheel={{
