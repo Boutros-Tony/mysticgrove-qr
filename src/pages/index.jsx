@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useState } from 'react'
+import { useState ,useEffect,useRef} from 'react'
 
 import styles from '@/styles/Home.module.scss'
 import Link from 'next/link'
@@ -10,11 +10,37 @@ import HorizontalScroll from 'components/paralax/paralax.component'
 import Characters from 'components/characters/characters.component'
 export default function Home() {
   const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef(null);
   // Function to toggle mute status
   const toggleMute = () => {
     setIsMuted(!isMuted);
   };
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            videoRef.current.play();
+          } else {
+            videoRef.current.pause();
+          }
+        });
+      },
+      {
+        threshold: 0.25 // Trigger if 25% of the video is in view
+      }
+    );
 
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => {
+      if (videoRef.current) {
+        observer.unobserve(videoRef.current);
+      }
+    };
+  }, []);
   const Key = () => {
     return (
         <>
@@ -84,7 +110,7 @@ const variantsBooks = {
       <div className={styles.mainWrapper}>
     
         <div className={styles.verticalCenterWrapper}>
-        <video className={styles.mainVideo} playsInline autoPlay  loop muted={isMuted}>
+        <video className={styles.mainVideo} ref={videoRef} playsInline autoPlay  loop muted={isMuted}>
         <source src='/assets/animations-sequence.mp4' type="video/mp4" />
         Your browser does not support the video tag.
       </video>
@@ -263,7 +289,7 @@ way people perceive their relationship with gin.
   
         </div>
       </motion.div>
-      
+      <div className={styles.libraryText}>Discover each gin chapter by clicking on its book</div>
       <div className={styles.libraryTitle}>
         <Key/>
         
@@ -343,10 +369,7 @@ way people perceive their relationship with gin.
        transition={{ duration: 1 }}
        variants={variantsVideoTwo}>
         <VideoComponent width="60%" videoId="7CVOwmZ80zA" src="/assets/video3.mp4" />
-          {/* <video controls  className={styles.videoThird} >
-        <source src="/assets/video3.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video> */}
+         
           </motion.div>
      
       <p className={styles.darkText}>On the road to paradise, some seekers might come across a cornucopia that is rich and abundant in gold. At certain times, more than once. And with just enough foresight, a number of those seekers will find more of it, not only for the substance itself, but for the freedom, well-being and satisfaction it bequeaths.</p>
@@ -355,29 +378,7 @@ way people perceive their relationship with gin.
       </div>
      
   
-      {/* <div className={styles.charactersWrapper}>
-        <img className={styles.charOne} src="/assets/charachters-1.jpg" />
-        <h1 className={styles.charTitle}>A multi- <br />
-dimensional <br />
-story <br />
- recounted <br />
-to thrill</h1>
-       <p className={styles.charText}>
-        <span>Mystic Grove</span> ventures <br />
-beyond what most gin <br />
-connoisseurs would expect.
-       </p>
-        <motion.div 
-         initial="hidden"
-         whileInView="visible"
-         viewport={{ once: false,amount:0.5 }}
-         transition={{ duration: 0.3 }}
-         variants={variantsChar}
-        >
-        <img className={styles.charTwo} src="/assets/charachters-2.jpg" />
-        </motion.div>
-        
-      </div> */}
+     
       <Characters/>
       <Footer/>
       </div>
